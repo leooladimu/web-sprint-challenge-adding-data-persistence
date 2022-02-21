@@ -21,7 +21,7 @@ function create(data) {
         .first()
   })
 }
-
+ 
 module.exports = {
   getAll,
   create,

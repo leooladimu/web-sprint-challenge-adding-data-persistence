@@ -2,14 +2,15 @@
 const db = require('../../data/dbConfig')
 
 function getAll() {
-  return db('projects').then(projects => {
-    return projects.map(prj => {
-      return {
-        ...prj,
-        project_completed: prj.project_completed ? true : false
-      }
+  return db('projects')
+    .then(projects => {
+      return projects.map(prj => {
+        return {
+          ...prj,
+          project_completed: prj.project_completed ? true : false
+        }
+      })
     })
-  })
 }
 
 function create(data) {

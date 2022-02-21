@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', 
   validateName, 
-  async (req, res, next) => { 
+  (req, res, next) => { 
     Resource.create(req.body)
       .then(newRes => {
         res.status(201).json(newRes)
